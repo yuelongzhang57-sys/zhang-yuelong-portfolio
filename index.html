@@ -1,0 +1,2129 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="张跃龙 - 视觉设计师 / AI 运营师个人作品集" />
+    <title>张跃龙 | Portfolio</title>
+    <link rel="stylesheet" href="./src/styles.css" />
+    <style id="profile-panel-upgrade">
+      .educationTitle {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .schoolLogoGroup {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .schoolLogoGroup img {
+        width: 1.08em;
+        height: 1.08em;
+        object-fit: contain;
+        vertical-align: middle;
+      }
+
+      .basicInfoPanel p,
+      .educationPanel p {
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+      }
+
+      .basicInfoPanel strong {
+        min-width: 4.5em;
+        color: var(--ink);
+        font-weight: 760;
+      }
+
+      .spatialSwapIntroInner {
+        padding-left: clamp(18px, 3vw, 52px);
+      }
+
+      .spatialSwapTitle.is-single-line {
+        width: auto !important;
+        max-width: none !important;
+        white-space: nowrap;
+        text-align: left;
+      }
+
+      @media (max-width: 700px) {
+        .educationTitle {
+          gap: 10px;
+        }
+
+        .schoolLogoGroup img {
+          width: 1em;
+          height: 1em;
+        }
+
+        .spatialSwapIntroInner {
+          padding-left: 0;
+        }
+      }
+    </style>
+    <style id="final-interactions-upgrade">
+      .splitTextReveal {
+        overflow: hidden;
+      }
+
+      .splitTextReveal.is-split .split-char {
+        display: inline-block;
+        opacity: 0;
+        transform: translate3d(0, 0.72em, 0);
+        transition:
+          opacity 760ms ease,
+          transform 980ms cubic-bezier(0.22, 1, 0.36, 1);
+        transition-delay: calc(var(--char-index, 0) * 34ms);
+        will-change: transform, opacity;
+      }
+
+      .splitTextReveal.is-visible .split-char {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+
+      .contactQRCards {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        flex-wrap: wrap;
+        gap: clamp(18px, 2.4vw, 34px);
+        margin-top: clamp(26px, 4vw, 56px);
+      }
+
+      .contactQRCard {
+        display: grid;
+        justify-items: center;
+        gap: 12px;
+        min-width: 168px;
+        padding: 16px 16px 18px;
+        border: 1px solid var(--line);
+        background: rgba(255, 253, 248, 0.7);
+        color: var(--ink);
+      }
+
+      .contactQRCard img {
+        display: block;
+        width: clamp(128px, 12vw, 174px);
+        aspect-ratio: 1;
+        object-fit: cover;
+        background: #fff;
+      }
+
+      .contactQRCard span {
+        font-size: 15px;
+        font-weight: 760;
+      }
+
+      .tiltedPortrait {
+        --tilt-x: 0deg;
+        --tilt-y: 0deg;
+        --tilt-scale: 1;
+        transform: perspective(900px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y)) scale(var(--tilt-scale));
+        transform-style: preserve-3d;
+        transform-origin: center center;
+        transition: transform 260ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 260ms ease;
+        will-change: transform;
+      }
+
+      .tiltedPortrait img {
+        transform: translateZ(18px);
+        transition: transform 260ms cubic-bezier(0.22, 1, 0.36, 1), filter 260ms ease;
+        will-change: transform;
+      }
+
+      .tiltedPortrait .portraitCaption {
+        transform: translateZ(36px);
+      }
+
+      .tiltedPortrait.is-tilting {
+        --tilt-scale: 1.025;
+        box-shadow: 0 34px 90px rgba(70, 92, 82, 0.18);
+      }
+
+      .tiltedPortrait.is-tilting img {
+        filter: saturate(0.94) brightness(1.06) contrast(0.96);
+      }
+
+
+      .aboutContent .sectionLabel h2 {
+        white-space: nowrap;
+      }
+
+      .aboutContent .leadText {
+        max-width: 58ch;
+        font-size: clamp(18px, 1.45vw, 26px);
+        line-height: 1.62;
+        text-wrap: pretty;
+      }
+
+      .contactFinal .splitTextReveal {
+        max-width: min(1560px, calc(100vw - 104px));
+        white-space: nowrap;
+        font-size: clamp(28px, 3.25vw, 62px);
+        line-height: 1.08;
+        letter-spacing: 0;
+      }
+
+      .capabilityCard {
+        --edge-proximity: 0;
+        --cursor-angle: 45deg;
+        --edge-sensitivity: 26;
+        --color-sensitivity: 42;
+        --glow-padding: 34px;
+        --cone-spread: 25;
+        --gradient-one: radial-gradient(at 80% 55%, hsl(205deg 86% 72% / 82%) 0, transparent 50%);
+        --gradient-two: radial-gradient(at 18% 10%, hsl(326deg 84% 78% / 72%) 0, transparent 52%);
+        --gradient-three: radial-gradient(at 82% 18%, hsl(44deg 94% 72% / 66%) 0, transparent 48%);
+        --gradient-four: radial-gradient(at 38% 78%, hsl(186deg 84% 70% / 64%) 0, transparent 52%);
+        --gradient-five: radial-gradient(at 9% 68%, hsl(262deg 72% 78% / 55%) 0, transparent 50%);
+        --gradient-six: radial-gradient(at 58% 8%, hsl(154deg 68% 72% / 46%) 0, transparent 48%);
+        --gradient-seven: radial-gradient(at 96% 88%, hsl(14deg 92% 76% / 52%) 0, transparent 52%);
+      }
+
+      .capabilityCard > .edge-light {
+        display: block;
+      }
+
+      .capabilityCard:focus-visible::before,
+      .capabilityCard:focus-visible::after,
+      .capabilityCard:focus-visible > .edge-light {
+        opacity: 1;
+      }
+
+      @media (max-width: 640px), (prefers-reduced-motion: reduce) {
+        .splitTextReveal.is-split .split-char {
+          opacity: 1;
+          transform: none;
+          transition: none;
+        }
+
+        .tiltedPortrait,
+        .tiltedPortrait img,
+        .tiltedPortrait .portraitCaption {
+          transform: none !important;
+          transition: none;
+        }
+      }
+
+
+      @media (max-width: 640px) {
+        .contactFinal .splitTextReveal {
+          max-width: 100%;
+          white-space: normal;
+          font-size: clamp(24px, 8vw, 38px);
+        }
+
+        .aboutContent .leadText {
+          font-size: 18px;
+          line-height: 1.7;
+        }
+      }
+
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 96px;
+      }
+
+      .cardNavContainer {
+        position: fixed;
+        top: clamp(14px, 2vw, 28px);
+        left: 50%;
+        z-index: 80;
+        width: min(92vw, 1080px);
+        transform: translateX(-50%);
+        pointer-events: none;
+      }
+
+      .cardNav {
+        position: relative;
+        height: 60px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.52);
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.48);
+        color: var(--ink);
+        box-shadow: 0 14px 38px rgba(88, 141, 173, 0.16);
+        backdrop-filter: blur(22px) saturate(1.18);
+        -webkit-backdrop-filter: blur(22px) saturate(1.18);
+        pointer-events: auto;
+        transition: height 360ms cubic-bezier(0.22, 1, 0.36, 1), background 260ms ease;
+      }
+
+      .cardNav.is-open {
+        height: 258px;
+        background: rgba(255, 255, 255, 0.66);
+      }
+
+      .cardNavTop {
+        position: absolute;
+        inset: 0 0 auto;
+        z-index: 2;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 8px 10px 8px 18px;
+      }
+
+      .cardNavBrand {
+        font-size: 15px;
+        font-weight: 820;
+        letter-spacing: 0;
+      }
+
+      .cardNavToggle {
+        width: 46px;
+        height: 42px;
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        border: 0;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.45);
+        color: currentColor;
+        cursor: pointer;
+      }
+
+      .cardNavToggle span {
+        width: 26px;
+        height: 2px;
+        background: currentColor;
+        transition: transform 220ms ease, opacity 180ms ease;
+      }
+
+      .cardNav.is-open .cardNavToggle span:first-child {
+        transform: translateY(4px) rotate(45deg);
+      }
+
+      .cardNav.is-open .cardNavToggle span:last-child {
+        transform: translateY(-4px) rotate(-45deg);
+      }
+
+      .cardNavContent {
+        position: absolute;
+        inset: 60px 0 0;
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 10px;
+        padding: 10px;
+        visibility: hidden;
+        pointer-events: none;
+      }
+
+      .cardNav.is-open .cardNavContent {
+        visibility: visible;
+        pointer-events: auto;
+      }
+
+      .navCard {
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.58);
+        border-radius: 11px;
+        background:
+          radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.72), transparent 9rem),
+          rgba(255, 255, 255, 0.42);
+        color: var(--ink);
+        text-decoration: none;
+        opacity: 0;
+        transform: translateY(18px);
+        transition:
+          opacity 300ms ease,
+          transform 360ms cubic-bezier(0.22, 1, 0.36, 1),
+          background 260ms ease;
+      }
+
+      .cardNav.is-open .navCard {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: calc(var(--nav-index, 0) * 45ms);
+      }
+
+      .navCard:hover,
+      .navCard:focus-visible {
+        background: rgba(255, 255, 255, 0.68);
+        outline: none;
+      }
+
+      .navCard strong {
+        font-size: clamp(16px, 1.2vw, 20px);
+        line-height: 1.16;
+        font-weight: 760;
+      }
+
+      .navCard span {
+        font-size: 13px;
+        color: var(--blue-deep);
+      }
+
+      .contactFinal {
+        min-height: 100vh;
+        padding: clamp(72px, 7vw, 108px) 0;
+        display: flex;
+        align-items: center;
+      }
+
+      .contactFinal::before {
+        inset: clamp(12px, 2vw, 40px);
+        border-radius: 26px;
+        background:
+          radial-gradient(circle at 18% 34%, rgba(125, 169, 189, 0.2), transparent 24rem),
+          radial-gradient(circle at 76% 48%, rgba(246, 222, 221, 0.28), transparent 26rem),
+          rgba(255, 252, 253, 0.66);
+        backdrop-filter: blur(12px);
+      }
+
+      .contactInner {
+        display: grid;
+        justify-items: center;
+        text-align: center;
+      }
+
+      .contactFinal .splitTextReveal {
+        margin: 0 auto clamp(30px, 4vw, 54px);
+      }
+
+      @media (max-width: 900px) {
+        .cardNav {
+          height: 56px;
+        }
+
+        .cardNav.is-open {
+          height: 430px;
+        }
+
+        .cardNavTop {
+          height: 56px;
+        }
+
+        .cardNavContent {
+          inset: 56px 0 0;
+          grid-template-columns: 1fr;
+          overflow: auto;
+        }
+
+        .navCard {
+          min-height: 58px;
+          gap: 8px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        .cardNav,
+        .cardNavToggle span,
+        .navCard {
+          transition: none;
+        }
+      }
+
+
+      .cardNavContainer {
+        top: auto;
+        bottom: clamp(14px, 2vw, 26px);
+        opacity: 0;
+        transform: translateX(-50%) translateY(26px);
+        transition: opacity 520ms ease, transform 620ms cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      .cardNavContainer.is-ready {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
+
+      .cardNavTop {
+        padding: 8px 10px;
+        gap: 12px;
+      }
+
+      .cardNavBrand {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        white-space: nowrap;
+      }
+
+      .cardNavStart {
+        min-width: 78px;
+        height: 42px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+        border: 1px solid rgba(255, 255, 255, 0.72);
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.9);
+        color: var(--ink);
+        font-size: 14px;
+        font-weight: 780;
+        text-decoration: none;
+      }
+
+      .cardNavStart:hover,
+      .cardNavStart:focus-visible {
+        outline: none;
+        background: #fff;
+      }
+
+      .navCard {
+        position: relative;
+        overflow: hidden;
+        min-height: 168px;
+        background: rgba(255, 255, 255, 0.54);
+      }
+
+
+
+      .navCardImage {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.78;
+        filter: saturate(0.98) contrast(0.98);
+        transform: scale(1.02);
+        transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1), opacity 260ms ease;
+        pointer-events: none;
+      }
+
+      .navCard:hover .navCardImage,
+      .navCard:focus-visible .navCardImage {
+        opacity: 0.9;
+        transform: scale(1.06);
+      }
+
+      .navCard::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        background-image: var(--nav-image, none);
+        background-size: var(--nav-size, 155% auto);
+        background-position: var(--nav-position, center 38%);
+        background-repeat: no-repeat;
+        opacity: var(--nav-image-opacity, 0.78);
+        filter: saturate(0.98) contrast(0.98);
+        transform: scale(1.02);
+        transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1), opacity 260ms ease;
+      }
+
+      .navCard::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.22) 48%, rgba(255, 255, 255, 0.72)),
+          radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.66), transparent 9rem);
+        pointer-events: none;
+      }
+
+      .navCard:hover::before,
+      .navCard:focus-visible::before {
+        opacity: calc(var(--nav-image-opacity, 0.78) + 0.12);
+        transform: scale(1.06);
+      }
+
+      .navCard strong,
+      .navCard span {
+        position: relative;
+        z-index: 2;
+      }
+
+      .navCard span {
+        margin-top: auto;
+        font-weight: 720;
+      }
+
+      .contactFinal {
+        background:
+          radial-gradient(circle at 18% 36%, rgba(125, 169, 189, 0.34), transparent 34rem),
+          radial-gradient(circle at 78% 44%, rgba(246, 222, 221, 0.46), transparent 38rem),
+          linear-gradient(180deg, #fbf8fb, #fff7fb 54%, #f9eef4);
+      }
+
+      .contactFinal::before {
+        background: rgba(255, 252, 253, 0.48);
+      }
+
+      @media (max-width: 900px) {
+        .cardNavContainer {
+          width: min(92vw, 520px);
+        }
+
+        .cardNav.is-open {
+          height: min(72vh, 520px);
+        }
+
+        .cardNavBrand {
+          font-size: 14px;
+        }
+
+        .cardNavStart {
+          min-width: 64px;
+        }
+
+        .navCard {
+          min-height: 86px;
+        }
+      }
+
+
+      .contactFinal {
+        width: 100vw !important;
+        max-width: 100vw !important;
+        min-height: 100svh !important;
+        margin-left: calc(50% - 50vw) !important;
+        margin-right: calc(50% - 50vw) !important;
+        padding: clamp(88px, 8vw, 126px) max(var(--page-gutter), 20px) clamp(148px, 13vw, 190px) !important;
+        border-radius: 0 !important;
+        background: linear-gradient(135deg, #eef6fb 0%, #fff8fb 44%, #f8e8f0 100%) !important;
+        box-sizing: border-box;
+      }
+
+      .contactFinal::before {
+        content: none !important;
+        display: none !important;
+        background: none !important;
+      }
+
+      .contactFinal .contactInner {
+        width: min(100%, 1560px);
+        min-height: calc(100svh - clamp(236px, 21vw, 316px));
+        align-content: center;
+        margin: 0 auto;
+      }
+
+
+      .contactFinal,
+      .contactFinal .contactInner,
+      .contactFinal .pageShell {
+        box-shadow: none !important;
+      }
+
+      .contactFinal .contactInner {
+        background: transparent !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+      }
+
+      .contactFinal::before,
+      .contactFinal::after,
+      .contactFinal .contactInner::before,
+      .contactFinal .contactInner::after {
+        content: none !important;
+        display: none !important;
+        opacity: 0 !important;
+        background: transparent !important;
+        border: 0 !important;
+        box-shadow: none !important;
+      }
+
+
+      body.is-loading {
+        overflow: hidden;
+      }
+
+      .siteLoader {
+        position: fixed;
+        inset: 0;
+        z-index: 120;
+        display: grid;
+        place-items: center;
+        padding: 28px;
+        background:
+          radial-gradient(circle at 22% 28%, rgba(125, 169, 189, 0.34), transparent 30rem),
+          radial-gradient(circle at 78% 62%, rgba(246, 222, 221, 0.58), transparent 34rem),
+          linear-gradient(135deg, #eef6fb 0%, #fff8fb 50%, #f8e8f0 100%);
+        color: var(--ink);
+        transition: opacity 180ms ease, visibility 180ms ease;
+      }
+
+      .siteLoader.is-done {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+
+      .siteLoaderPanel {
+        width: min(86vw, 520px);
+        display: grid;
+        gap: 18px;
+      }
+
+      .siteLoaderTop {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 18px;
+      }
+
+      .siteLoaderTitle {
+        margin: 0;
+        font-size: clamp(24px, 3.2vw, 42px);
+        line-height: 1.06;
+        font-weight: 820;
+        letter-spacing: 0;
+      }
+
+      .siteLoaderPercent {
+        font-size: 18px;
+        font-weight: 820;
+        color: var(--blue-deep);
+      }
+
+      .siteLoaderTrack {
+        height: 10px;
+        overflow: hidden;
+        border: 1px solid rgba(88, 141, 173, 0.18);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.68);
+      }
+
+      .siteLoaderBar {
+        width: 0%;
+        height: 100%;
+        border-radius: inherit;
+        background: linear-gradient(90deg, rgba(88, 141, 173, 0.95), rgba(227, 181, 185, 0.95));
+        box-shadow: 0 0 24px rgba(88, 141, 173, 0.24);
+        transition: width 80ms cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      .siteLoaderHint {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .siteLoader,
+        .siteLoaderBar {
+          transition: none;
+        }
+      }
+    </style>
+  </head>
+  <body class="is-loading">
+
+    <div class="siteLoader" id="site-loader" role="status" aria-live="polite" aria-label="网站加载进度">
+      <div class="siteLoaderPanel">
+        <div class="siteLoaderTop">
+          <h1 class="siteLoaderTitle">正在进入作品集</h1>
+          <span class="siteLoaderPercent" id="site-loader-percent">0%</span>
+        </div>
+        <div class="siteLoaderTrack" aria-hidden="true">
+          <div class="siteLoaderBar" id="site-loader-bar"></div>
+        </div>
+        <p class="siteLoaderHint">正在准备视频首屏与作品图像</p>
+      </div>
+    </div>
+
+    <div class="cardNavContainer">
+      <nav class="cardNav" id="card-nav" aria-label="页面导航">
+        <div class="cardNavTop">
+          <button class="cardNavToggle" type="button" id="card-nav-toggle" aria-label="打开页面导航" aria-expanded="false">
+            <span></span>
+            <span></span>
+          </button>
+          <div class="cardNavBrand">张跃龙的个人网站</div>
+          <a class="cardNavStart" href="#home">开始</a>
+        </div>
+        <div class="cardNavContent">
+          <a class="navCard" style="--nav-index: 0" href="#about"><img class="navCardImage" src="./个人照片/微信图片_20260610145513_1027_7.jpg" alt="" loading="lazy" decoding="async" style="object-position: center 34%;" /><strong>个人简介及经历</strong><span>Profile</span></a>
+          <a class="navCard" style="--nav-index: 1" href="#aigc-film"><img class="navCardImage" src="./AIGC商业影视创作（反面）.png" alt="" loading="lazy" decoding="async" style="object-position: center 34%;" /><strong>AIGC商业影视创作</strong><span>AIGC Film</span></a>
+          <a class="navCard" style="--nav-index: 2" href="#spatial-visual"><img class="navCardImage" src="./环境视觉与三维表达（反面）.png" alt="" loading="lazy" decoding="async" style="object-position: center 36%;" /><strong>环境视觉与三维表达</strong><span>Spatial</span></a>
+          <a class="navCard" style="--nav-index: 3" href="#campus"><img class="navCardImage" src="./校园实践与成长经历（反面）.png" alt="" loading="lazy" decoding="async" style="object-position: center 36%;" /><strong>校园实践与成长经历</strong><span>Campus</span></a>
+          <a class="navCard" style="--nav-index: 4" href="#capability-learning"><img class="navCardImage" src="./个人能力与技能学习（反面）.png" alt="" loading="lazy" decoding="async" style="object-position: center 35%;" /><strong>个人能力与技能学习</strong><span>Ability</span></a>
+        </div>
+      </nav>
+    </div>
+    <main>
+      <section class="hero" id="home">
+        <div class="heroMedia" aria-hidden="true">
+          <video class="heroVideo heroVideoIntro" src="./assets/hero/hero-intro.mp4" muted playsinline preload="auto"></video>
+          <video class="heroVideo heroVideoLoop" src="./assets/hero/hero-loop.mp4" muted playsinline preload="auto" loop></video>
+        </div>
+
+        <div class="heroStage pageShell">
+          <div class="heroTitleArt" aria-label="WELCOME TO MY WORLD">
+            <img src="./assets/hero/welcome-title.png" alt="WELCOME TO MY WORLD" />
+          </div>
+          <div class="heroProfile">
+            <strong>张跃龙</strong>
+            <p>
+              视觉设计师 / 增长运营实践者。以标准化视觉产出、AIGC 工具链路与数据复盘逻辑，
+              将创意落地为适配产品留存、用户增长的可交付商业方案。
+            </p>
+          </div>
+        </div>
+
+      </section>
+
+      <section class="section aboutSection revealSection revealAbout" id="about">
+        <div class="pageShell aboutGrid">
+          <div class="portraitWrap tiltedPortrait" data-tilted-card>
+            <img src="./assets/portrait.jpg" alt="张跃龙个人照片" />
+            <div class="portraitCaption">Open to collaboration from Jul 2026</div>
+          </div>
+
+          <div class="aboutContent">
+            <div class="sectionLabel">
+              <span>PROFILE</span>
+              <h2>个人介绍及经历</h2>
+            </div>
+            <p class="leadText">
+              我是张跃龙，华中农业大学风景园林硕士。我的实践横跨视觉设计、AIGC 商业内容生产、
+              线上产品运营与用户数据分析，完整覆盖从创意落地、活动策划到增长复盘的全业务链路。
+              我希望将成熟视觉审美、AIGC 自动化工作流、数据驱动的运营思路整合一体，
+              兼顾产品体验优化、用户活跃与长效增长，用设计与技术双向赋能产品全周期运营。
+            </p>
+
+            <div class="resumePanels">
+              <div class="panel educationPanel">
+                <h3 class="educationTitle">
+                  <span>教育背景</span>
+                  <span class="schoolLogoGroup" aria-label="华中农业大学、西安建筑科技大学、新加坡国立大学">
+                    <img src="./华中农业大学logo.png" alt="华中农业大学 logo" />
+                    <img src="./西安建筑科技大学logo.png" alt="西安建筑科技大学 logo" />
+                    <img src="./新加坡国立大学logo.png" alt="新加坡国立大学 logo" />
+                  </span>
+                </h3>
+                <p>2024.09 - 2027.06 / 华中农业大学 / 风景园林硕士</p>
+                <p>2019.09 - 2023.06 / 西安建筑科技大学 / 环境设计本科</p>
+                <p>2025.06 - 2025.08 / 新加坡国立大学 / 暑期交换生</p>
+              </div>
+              <div class="panel basicInfoPanel">
+                <h3>个人基本信息</h3>
+                <p><strong>出生日期</strong><span>2000.07.14</span></p>
+                <p><strong>籍贯</strong><span>湖北省襄阳市</span></p>
+                <p><strong>电话</strong><span>13221819162</span></p>
+                <p><strong>QQ邮箱</strong><span>596881032@qq.com</span></p>
+              </div>
+            </div>
+
+            <div class="timeline">
+              <article class="timelineItem">
+                <div>
+                  <time>2026.03 - 2026.06</time>
+                  <h3>汇嘉科技（武汉）有限公司</h3>
+                  <strong>内容运营</strong>
+                </div>
+                <ul>
+                  <li>负责抖音、视频号矩阵账号定位、选题、脚本与视频制作，稳定获得日均 10-15 条客资。</li>
+                  <li>独立执行展会筹备、物料设计与客户接待，累计接待客户 100+，收集有效线索 50+。</li>
+                  <li>搭建 AIGC 内容制作 SOP 与线上获客培训体系，覆盖学员 50+。</li>
+                </ul>
+              </article>
+
+              <article class="timelineItem">
+                <div>
+                  <time>2025.12 - 2026.02</time>
+                  <h3>杭州知行元科技有限公司</h3>
+                  <strong>AI 商业内容制作</strong>
+                </div>
+                <ul>
+                  <li>使用 Nano Banana、可灵、即梦、Stable Diffusion 与 ComfyUI 生成商业美术资产。</li>
+                  <li>参与品牌 TVC 项目，从客户需求、创意构思到 AI 生成与交付全流程推进。</li>
+                </ul>
+              </article>
+
+              <article class="timelineItem">
+                <div>
+                  <time>2025.07 - 2025.10</time>
+                  <h3>武汉木瓜法宝科技有限公司</h3>
+                  <strong>新媒体运营</strong>
+                </div>
+                <ul>
+                  <li>搭建多个垂类账号，产出 3 条播放量过 100 万的视频，单条最高获赞 5 万。</li>
+                  <li>通过投放数据优化人群定向与素材策略，累计获得精准客户线索 100+。</li>
+                </ul>
+              </article>
+            </div>
+
+            <a class="promptLink" href="https://fcnvxiev6q7k.feishu.cn/wiki/Emk5wKG9nimkMVk8XSTcimXFnye" target="_blank" rel="noreferrer">
+              查看作品集提示词与项目档案
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section projectsSection revealSection" id="projects">
+        <div class="pageShell homeProjectTitle">
+          <div class="homeProjectTitleInner">
+            <h2>AIGC商业影视创作</h2>
+          </div>
+        </div>
+
+        <section class="section filmSection revealSection" id="aigc-film">
+          <div class="pageShell">
+            <div class="filmGrid">
+              <article class="filmCard" data-film-card>
+                <div class="filmMedia">
+                  <video src="./assets/videos/aigc/black-myth-wukong.mp4" poster="./assets/videos/aigc/lamborghini-aigc-poster.jpg" muted loop playsinline preload="metadata"></video>
+                </div>
+                <div class="filmCopy">
+                  <span>MYTH / FAITH / BATTLE</span>
+                  <h2>黑神话悟空</h2>
+                  <p>云冈石窟深处，一位早已看透天命的悟空逆势而来。面对封印的巨型怪兽，他不再逃避，而是挥棒应战。天宫乐伎奏响神音，神佛默然，万佛目睹，一棒踏入光影与信仰的交界处。</p>
+                </div>
+              </article>
+
+              <article class="filmCard" data-film-card>
+                <div class="filmMedia">
+                  <video src="./assets/videos/aigc/howard-johnson-maerkang.mp4" muted loop playsinline preload="metadata"></video>
+                </div>
+                <div class="filmCopy">
+                  <span>HOTEL / TRAVEL / EXPERIENCE</span>
+                  <h2>尘埃落定·豪生大酒店</h2>
+                  <p>在文学秘境醒来，马尔康尘埃落定豪生 24h 全体验。以酒店空间、旅居情绪与目的地节奏串联出一段安静而完整的入住旅程。</p>
+                </div>
+              </article>
+
+              <article class="filmCard" data-film-card>
+                <div class="filmMedia">
+                  <video src="./assets/videos/aigc/music-healing.mp4" muted loop playsinline preload="metadata"></video>
+                </div>
+                <div class="filmCopy">
+                  <span>HEALING / MUSIC / DREAM SPACE</span>
+                  <h2>音乐疗愈</h2>
+                  <p>即梦 AIGC 创作大赛疗愈方向作品。故事从一位工作失利、内心惆怅的小女孩开始，走进音乐空间后，被节奏、光感与情绪慢慢安抚。</p>
+                </div>
+              </article>
+
+              <article class="filmCard" data-film-card>
+                <div class="filmMedia">
+                  <video src="./assets/videos/aigc/vacuum-pump-bearing.mp4" muted loop playsinline preload="metadata"></video>
+                </div>
+                <div class="filmCopy">
+                  <span>INDUSTRIAL / PRODUCT / PERFORMANCE</span>
+                  <h2>真空泵轴承</h2>
+                  <p>围绕品牌真空泵轴承的性能优势、稳定性与工业应用场景展开，突出产品结构、可靠表现与工业语境中的落地能力。</p>
+                </div>
+              </article>
+
+              <article class="filmCard" data-film-card>
+                <div class="filmMedia">
+                  <video src="./assets/videos/aigc/yongxingfang-dried-seafood.mp4" muted loop playsinline preload="metadata"></video>
+                </div>
+                <div class="filmCopy">
+                  <span>LOCAL MEMORY / HISTORY / CITY</span>
+                  <h2>永兴坊老杂货铺</h2>
+                  <p>珠海老杂货铺与明清商业背景的城市记忆。围绕咸鱼、虾米、虾酱、虾糕、蚝豉和蚝油等货物，讲述香山特产如何流向港澳及东南亚。</p>
+                </div>
+              </article>
+
+              <article class="filmCard" data-film-card>
+                <div class="filmMedia">
+                  <video src="./assets/videos/aigc/lamborghini-aigc-h264.mp4" poster="./assets/videos/aigc/lamborghini-aigc-poster.jpg" muted loop playsinline preload="metadata"></video>
+                </div>
+                <div class="filmCopy">
+                  <span>AUTOMOTIVE / SPEED / FIRST WORK</span>
+                  <h2>兰博基尼 AIGC 宣传片</h2>
+                  <p>个人处女作。车辆从雨夜黑森林驶向破晓，穿越山洞，最终抵达满是云海的仙境，以速度与张力构建一条电影感极强的视觉路径。</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <div class="pageShell homeProjectTitle">
+          <div class="homeProjectTitleInner">
+            <h2>环境视觉与三维表达</h2>
+          </div>
+        </div>
+        <section class="section spatialSection revealSection" id="spatial-visual">
+          <div class="pageShell spatialSwapShell">
+            <div class="spatialSwapIntro">
+              <div class="spatialSwapIntroInner">
+                <h3 class="spatialSwapTitle" id="spatial-swap-title">本科毕设</h3>
+                <p class="spatialSwapBody" id="spatial-swap-body">
+                  围绕场地现状、空间问题与动线组织展开的毕业设计项目，强调环境更新、功能优化与三维表达的完整呈现。
+                </p>
+                <div class="spatialSwapMeta" id="spatial-swap-meta">本科毕业设计 / PDF</div>
+                <button class="spatialDetailButton" type="button" id="spatial-detail-button">了解详情</button>
+              </div>
+            </div>
+            <div class="card-swap-stage">
+              <div class="card-swap-container" id="spatial-card-swap" aria-label="环境视觉与三维表达换卡">
+                <article class="card spatialSwapCard" data-spatial-card data-detail-id="spatial-undergraduate" data-title="本科毕设" data-body="围绕场地现状、空间问题与动线组织展开的毕业设计项目，强调环境更新、功能优化与三维表达的完整呈现。" data-meta="本科毕业设计 / PDF">
+                  <div class="spatialSwapCardMedia">
+                    <img src="./assets/spatial/undergraduate-final/undergraduate-final-preview.png" data-web-src="/assets/spatial/undergraduate-final/undergraduate-final-preview.png" alt="本科毕设预览图" />
+                  </div>
+                </article>
+                <article class="card spatialSwapCard" data-spatial-card data-detail-id="spatial-huaqing" data-title="西安华清科教产业园区环境景观更新设计" data-body="围绕西安华清科教产业园区展开的环境景观更新设计，通过历史街巷、场地关系和图面组织表达设计逻辑。" data-meta="中国环境设计学年奖 / 竞赛排版">
+                  <div class="spatialSwapCardMedia">
+                    <img src="./assets/spatial/huaqing-ripple/huaqing-preview.png" data-web-src="/assets/spatial/huaqing-ripple/huaqing-preview.png" alt="华清·涟漪上预览图" />
+                  </div>
+                </article>
+                <article class="card spatialSwapCard" data-spatial-card data-detail-id="spatial-blender" data-title="个人 Blender 建模" data-body="围绕三维建模、材质和灯光进行的个人练习，用于补充空间表达和视觉推演的方法。" data-meta="个人练习 / 3D 作品集">
+                  <div class="spatialSwapCardMedia">
+                    <img src="./assets/spatial/blender/blender-preview.jpg" data-web-src="/assets/spatial/blender/blender-preview.jpg" alt="个人 Blender 建模预览图" />
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="pageShell homeProjectTitle">
+          <div class="homeProjectTitleInner">
+            <h2>校园实践与成长经历</h2>
+          </div>
+        </div>
+
+        <section class="section campusSection revealSection" id="campus">
+          <div class="pageShell campusWrap">
+            <div class="campusProjectGrid">
+              <article class="campusProjectCard" data-detail-id="campus-nus" tabindex="0" role="button" aria-label="查看新加坡国立大学暑期交换生详情">
+                <img src="./assets/campus/nus/nus-01.jpg" data-web-src="/assets/campus/nus/nus-01.jpg" alt="新加坡国立大学暑期交换生" />
+                <div class="campusProjectCopy">
+                  <time>2025.06 - 2025.08</time>
+                  <h3>新加坡国立大学暑期交换生</h3>
+                  <p>系统学习 Python 数据分析、Tableau 数据可视化、深度学习与自然语言处理等课程，拓宽了数据分析与 AI 的视野。</p>
+                </div>
+              </article>
+
+              <article class="campusProjectCard" data-detail-id="campus-lion" tabindex="0" role="button" aria-label="查看狮景会全国第六届代表大会志愿者详情">
+                <img src="./assets/campus/lion-landscape/lion-01.jpg" data-web-src="/assets/campus/lion-landscape/lion-01.jpg" alt="狮景会全国第六届代表大会志愿者" />
+                <div class="campusProjectCopy">
+                  <time>硕士阶段</time>
+                  <h3>狮景会全国第六届代表大会志愿者</h3>
+                  <p>负责签到、物料发放与现场协助，在组织协同与公共服务中积累大型活动经验。</p>
+                </div>
+              </article>
+
+              <article class="campusProjectCard" data-detail-id="campus-party" tabindex="0" role="button" aria-label="查看西安建筑科技大学 2020 年艺术学院元旦晚会详情">
+                <img src="./assets/campus/new-year-party/party-01.jpg" data-web-src="/assets/campus/new-year-party/party-01.jpg" alt="西安建筑科技大学 2020 年艺术学院元旦晚会" />
+                <div class="campusProjectCopy">
+                  <time>2020</time>
+                  <h3>西安建筑科技大学 2020 年艺术学院元旦晚会</h3>
+                  <p>作为表演者参与学院元旦晚会，在排练、舞台配合与现场演出中积累公共展示经验。</p>
+                </div>
+              </article>
+
+              <article class="campusProjectCard" data-detail-id="campus-youku" tabindex="0" role="button" aria-label="查看优酷国漫很酷校园主题活动详情">
+                <img src="./assets/campus/youku-guoman/youku-01.jpg" data-web-src="/assets/campus/youku-guoman/youku-01.jpg" alt="优酷“国漫很酷”校园主题活动" />
+                <div class="campusProjectCopy">
+                  <time>2021</time>
+                  <h3>优酷“国漫很酷”校园主题活动</h3>
+                  <p>参与优酷在西安建筑科技大学举办的国漫主题活动，作为表演者完成现场演出。</p>
+                </div>
+              </article>
+
+              <article class="campusProjectCard" data-detail-id="campus-best" tabindex="0" role="button" aria-label="查看 Best Education 英语口语俱乐部详情">
+                <img src="./assets/campus/best-education/best-01.jpg" data-web-src="/assets/campus/best-education/best-01.jpg" alt="Best Education 英语口语俱乐部" />
+                <div class="campusProjectCopy">
+                  <time>本科阶段</time>
+                  <h3>Best Education 英语口语俱乐部</h3>
+                  <p>作为成员参与口语演讲、小组竞赛与口语训练等积分制活动，并与小组获得优秀团队奖，在持续练习中提升了英语表达与团队协作能力。</p>
+                </div>
+              </article>
+
+              <article class="campusProjectCard" data-detail-id="campus-ai-ta" tabindex="0" role="button" aria-label="查看人工智能研究生课程助教详情">
+                <img src="./assets/campus/ai-ta/ai-ta-certificate.jpg" data-web-src="/assets/campus/ai-ta/ai-ta-certificate.jpg" alt="人工智能研究生课程助教" />
+                <div class="campusProjectCopy">
+                  <time>2025 秋季</time>
+                  <h3>人工智能研究生课程助教</h3>
+                  <p>基于对人工智能的兴趣，担任一学期的人工智能基础实验助教，协助学生理解 AI、数据分析与 SQL 的基础技能。</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <div class="pageShell homeProjectTitle">
+          <div class="homeProjectTitleInner">
+            <h2>个人能力与技能学习</h2>
+          </div>
+        </div>
+
+        <section class="section capabilitySection revealSection" id="capability-learning">
+          <div class="pageShell capabilityOverview">
+            <div class="capabilityGrid">
+              <article class="capabilityCard" data-detail-id="capability-cet4" tabindex="0" role="button" aria-label="查看英语四级与交流能力详情">
+                <span class="edge-light" aria-hidden="true"></span>
+                <div class="capabilityCardTop">
+                  <span class="capabilityIndex">01</span>
+                  <span class="capabilityTag">Language</span>
+                </div>
+                <h3>英语四级与日常交流能力</h3>
+                <p>通过英语四级，并结合新加坡留学经历，具备日常交流、课堂理解与基础学术沟通能力。</p>
+                <span class="capabilityAction">查看详情 ↗</span>
+              </article>
+              <article class="capabilityCard" data-detail-id="capability-sanxiaxiang" tabindex="0" role="button" aria-label="查看三下乡实践优秀个人详情">
+                <span class="edge-light" aria-hidden="true"></span>
+                <div class="capabilityCardTop">
+                  <span class="capabilityIndex">02</span>
+                  <span class="capabilityTag">Practice</span>
+                </div>
+                <h3>三下乡实践优秀个人</h3>
+                <p>在湖北省钟祥市胡集高中开展党史主题宣传教育实践，结合 PPT、短片、海报与讲座等方式，增强了青少年的参与感与认知度。</p>
+                <span class="capabilityAction">查看详情 ↗</span>
+              </article>
+              <article class="capabilityCard" data-detail-id="capability-future-designer" tabindex="0" role="button" aria-label="查看未来设计师全国高校数字艺术设计大赛详情">
+                <span class="edge-light" aria-hidden="true"></span>
+                <div class="capabilityCardTop">
+                  <span class="capabilityIndex">03</span>
+                  <span class="capabilityTag">Design</span>
+                </div>
+                <h3>未来设计师·全国高校数字艺术设计大赛</h3>
+                <p>通过景观建模与影视表达完成大唐西市的复原与 3D 视频展示，在长期打磨中把握了建模、美学与协作配合的平衡。</p>
+                <span class="capabilityAction">查看详情 ↗</span>
+              </article>
+              <article class="capabilityCard" data-detail-id="capability-ai-ta" tabindex="0" role="button" aria-label="查看人工智能研究生课程助教详情">
+                <span class="edge-light" aria-hidden="true"></span>
+                <div class="capabilityCardTop">
+                  <span class="capabilityIndex">04</span>
+                  <span class="capabilityTag">AI</span>
+                </div>
+                <h3>人工智能研究生课程助教</h3>
+                <p>基于对人工智能的兴趣，在华中农业大学担任一个学期的人工智能基础实践助教，帮助学生理解 AI、数据分析与 SQL 的基础技能。</p>
+                <span class="capabilityAction">查看详情 ↗</span>
+              </article>
+              <article class="capabilityCard" data-detail-id="capability-innovation-contest" tabindex="0" role="button" aria-label="查看中国国际大学生创新大赛详情">
+                <span class="edge-light" aria-hidden="true"></span>
+                <div class="capabilityCardTop">
+                  <span class="capabilityIndex">05</span>
+                  <span class="capabilityTag">Teamwork</span>
+                </div>
+                <h3>中国国际大学生创新大赛</h3>
+                <p>和团队一起打磨“共享厨房”这一想法，从概念雏形推进到参赛落地，在协作中把天马行空的创意变成了可执行方案。</p>
+                <span class="capabilityAction">查看详情 ↗</span>
+              </article>
+              <article class="capabilityCard" data-detail-id="capability-paper" tabindex="0" role="button" aria-label="查看论文研究成果详情">
+                <span class="edge-light" aria-hidden="true"></span>
+                <div class="capabilityCardTop">
+                  <span class="capabilityIndex">06</span>
+                  <span class="capabilityTag">Research</span>
+                </div>
+                <h3>论文研究成果</h3>
+                <p>结合 NLP 与专业研究方向完成《社交媒体数据驱动的公园绿地 CES 感知研究——以武汉市为例》，论文已被知网收录，DOI：10.26914/c.cnkihy.2025.045646。</p>
+                <span class="capabilityAction">查看详情 ↗</span>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section skillsSection revealSection" id="skills">
+          <div class="pageShell skillsShell">
+            <div class="skillsSectionHeader">
+              <span>技能掌握</span>
+              <h3>点击任一软件图标，查看熟练度和使用简介</h3>
+            </div>
+            <div class="skillsBoard">
+              <div class="skillsDomeShell skillsGridShell" id="skills-root" data-open="false">
+                <div class="skillsGridFrame">
+                  <div class="skillsGrid" id="skills-sphere" aria-label="技能图标列表"></div>
+                </div>
+                <div class="skillsOverlay" id="skills-viewer" aria-hidden="true">
+                  <button class="skillsOverlayBackdrop" type="button" data-skill-close aria-label="关闭技能详情"></button>
+                  <div class="skillsOverlayPanel" role="dialog" aria-modal="true" aria-label="技能详情">
+                    <button class="skillsOverlayClose" type="button" data-skill-close aria-label="关闭技能详情">×</button>
+                    <div class="skillsModalContent" id="skills-modal" aria-live="polite"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <div class="projectDetailOverlay" id="project-detail-overlay" aria-hidden="true">
+        <button class="projectDetailBackdrop" type="button" data-project-detail-close aria-label="关闭项目详情"></button>
+        <section class="projectDetailPanel" role="dialog" aria-modal="true" aria-labelledby="project-detail-title">
+          <button class="projectDetailClose" type="button" data-project-detail-close aria-label="关闭项目详情">×</button>
+          <div class="projectDetailHeader">
+            <span id="project-detail-kicker">PROJECT DETAIL</span>
+            <h3 id="project-detail-title"></h3>
+            <p id="project-detail-summary"></p>
+          </div>
+          <div class="projectDetailAssets" id="project-detail-assets"></div>
+        </section>
+      </div>
+
+      <div class="capabilityDetailOverlay" id="capability-detail-overlay" aria-hidden="true">
+        <button class="capabilityDetailBackdrop" type="button" data-capability-detail-close aria-label="关闭能力详情"></button>
+        <section class="capabilityDetailPanel" role="dialog" aria-modal="true" aria-labelledby="capability-detail-title">
+          <button class="capabilityDetailClose" type="button" data-capability-detail-close aria-label="关闭能力详情">×</button>
+          <div class="capabilityDetailHeader">
+            <span id="capability-detail-kicker">PERSONAL ABILITY</span>
+            <h3 id="capability-detail-title"></h3>
+            <p id="capability-detail-summary"></p>
+          </div>
+          <div class="capabilityDetailLayout capabilityDetailLayout--overlay">
+            <aside class="capabilityDetailCopy capabilityDetailCopy--overlay">
+              <div class="capabilityIndex" id="capability-detail-index">01</div>
+              <h2 id="capability-detail-lead"></h2>
+              <p class="capabilitySummary" id="capability-detail-copy"></p>
+              <div class="capabilityFacts" id="capability-detail-facts"></div>
+              <div class="capabilityDocActions" id="capability-detail-actions"></div>
+            </aside>
+            <section class="capabilityPreview capabilityPreview--overlay">
+              <div class="capabilityPreviewMeta">
+                <span id="capability-detail-preview-kicker">evidence preview</span>
+                <span id="capability-detail-preview-type">image / embedded</span>
+              </div>
+              <div class="capabilityPreviewFrame" id="capability-detail-preview"></div>
+            </section>
+          </div>
+        </section>
+      </div>
+
+      <section class="contactFinal revealSection revealContact" id="contact">
+        <div class="pageShell contactInner">
+          <h2 class="splitTextReveal" data-split-text>设计、AI、运营并行，落地每一份可产生增长价值的创意。</h2>
+          <div class="contactQRCards" aria-label="微信二维码和QQ二维码">
+            <div class="contactQRCard">
+              <img src="./微信二维码.jpg" alt="张跃龙微信二维码" />
+              <span>微信二维码</span>
+            </div>
+            <div class="contactQRCard">
+              <img src="./qq二维码.jpg" alt="张跃龙 QQ 二维码" />
+              <span>QQ二维码</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module">
+      const revealTargets = [...document.querySelectorAll(".revealSection")];
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const hero = document.querySelector(".hero");
+      const heroIntroVideo = document.querySelector(".heroVideoIntro");
+      const heroLoopVideo = document.querySelector(".heroVideoLoop");
+      const filmCards = [...document.querySelectorAll("[data-film-card]")];
+      const spatialCards = [...document.querySelectorAll("[data-spatial-card]")];
+      const spatialTitle = document.getElementById("spatial-swap-title");
+      const spatialBody = document.getElementById("spatial-swap-body");
+      const spatialMeta = document.getElementById("spatial-swap-meta");
+      const spatialDetailButton = document.getElementById("spatial-detail-button");
+      const campusCards = [...document.querySelectorAll(".campusProjectCard[data-detail-id]")];
+      const capabilityCards = [...document.querySelectorAll(".capabilityCard[data-detail-id]")];
+      const projectDetailOverlay = document.getElementById("project-detail-overlay");
+      const projectDetailTitle = document.getElementById("project-detail-title");
+      const projectDetailKicker = document.getElementById("project-detail-kicker");
+      const projectDetailSummary = document.getElementById("project-detail-summary");
+      const projectDetailAssets = document.getElementById("project-detail-assets");
+      const projectDetailCloseButtons = [...document.querySelectorAll("[data-project-detail-close]")];
+      const capabilityDetailOverlay = document.getElementById("capability-detail-overlay");
+      const capabilityDetailTitle = document.getElementById("capability-detail-title");
+      const capabilityDetailKicker = document.getElementById("capability-detail-kicker");
+      const capabilityDetailSummary = document.getElementById("capability-detail-summary");
+      const capabilityDetailIndex = document.getElementById("capability-detail-index");
+      const capabilityDetailLead = document.getElementById("capability-detail-lead");
+      const capabilityDetailCopy = document.getElementById("capability-detail-copy");
+      const capabilityDetailFacts = document.getElementById("capability-detail-facts");
+      const capabilityDetailActions = document.getElementById("capability-detail-actions");
+      const capabilityDetailPreview = document.getElementById("capability-detail-preview");
+      const capabilityDetailPreviewKicker = document.getElementById("capability-detail-preview-kicker");
+      const capabilityDetailPreviewType = document.getElementById("capability-detail-preview-type");
+      const capabilityDetailCloseButtons = [...document.querySelectorAll("[data-capability-detail-close]")];
+      const skillsRoot = document.getElementById("skills-root");
+      const skillsSphere = document.getElementById("skills-sphere");
+      const skillsViewer = document.getElementById("skills-viewer");
+      const skillsModal = document.getElementById("skills-modal");
+      const skillCloseButtons = [...document.querySelectorAll("[data-skill-close]")];
+
+      if (prefersReducedMotion) {
+        revealTargets.forEach((target) => target.classList.add("is-revealed"));
+      } else if ("IntersectionObserver" in window) {
+        const revealObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("is-revealed");
+            revealObserver.unobserve(entry.target);
+          });
+        }, { threshold: 0.18, rootMargin: "0px 0px -12% 0px" });
+        revealTargets.forEach((target) => revealObserver.observe(target));
+      } else {
+        revealTargets.forEach((target) => target.classList.add("is-revealed"));
+      }
+
+      function playVideo(video) {
+        if (!video) return;
+        video.muted = true;
+        video.playsInline = true;
+        video.play().catch(() => undefined);
+      }
+
+      function initHeroVideo() {
+        if (!hero || !heroLoopVideo) return;
+        heroIntroVideo?.pause();
+        heroLoopVideo.pause();
+        if (heroIntroVideo) heroIntroVideo.currentTime = 0;
+        heroLoopVideo.currentTime = 0;
+        const hasPlayedIntro = sessionStorage.getItem("heroIntroPlayed") === "true";
+        window.setTimeout(() => hero.classList.add("isTitleReady"), 4000);
+
+        if (prefersReducedMotion || hasPlayedIntro || !heroIntroVideo) {
+          hero.classList.add("isLooping", "isTitleReady");
+          playVideo(heroLoopVideo);
+          return;
+        }
+
+        hero.classList.add("isIntroPlaying");
+        heroIntroVideo.addEventListener("ended", () => {
+          sessionStorage.setItem("heroIntroPlayed", "true");
+          hero.classList.add("isLooping");
+          hero.classList.remove("isIntroPlaying");
+          playVideo(heroLoopVideo);
+        }, { once: true });
+        heroIntroVideo.addEventListener("error", () => {
+          sessionStorage.setItem("heroIntroPlayed", "true");
+          hero.classList.add("isLooping", "isTitleReady");
+          hero.classList.remove("isIntroPlaying");
+          playVideo(heroLoopVideo);
+        }, { once: true });
+        playVideo(heroIntroVideo);
+      }
+
+      let heroVideoStarted = false;
+      function startHeroVideoAfterLoader() {
+        if (heroVideoStarted) return;
+        heroVideoStarted = true;
+        initHeroVideo();
+      }
+
+      if (location.protocol !== "file:") {
+        document.querySelectorAll("img[data-web-src]").forEach((img) => {
+          img.src = img.dataset.webSrc || img.src;
+        });
+      }
+
+      function syncSpatialContent(card) {
+        if (!card) return;
+        spatialTitle.innerHTML = formatSpatialTitle(card.dataset.title || "");
+        spatialTitle.classList.toggle("is-single-line", card.dataset.detailId === "spatial-blender");
+        spatialBody.textContent = card.dataset.body || "";
+        spatialMeta.textContent = card.dataset.meta || "";
+      }
+
+      function formatSpatialTitle(title) {
+        const value = String(title || "").trim();
+        if (!value) return "";
+        if (/[A-Za-z0-9]/.test(value) || /\s/.test(value)) {
+          return value;
+        }
+        const maxCharsPerLine = 6;
+        const lines = value.match(new RegExp(`.{1,${maxCharsPerLine}}`, "g")) || [value];
+        return lines
+          .map((line) => `<span class="spatialSwapTitleLine">${line}</span>`)
+          .join("");
+      }
+
+      const projectDetails = {
+        "spatial-undergraduate": {
+          kicker: "环境视觉与三维表达",
+          title: "本科毕设",
+          summary: "围绕场地现状、空间问题与动线组织展开的毕业设计项目，完整呈现从问题识别、空间策略到图纸表达的设计过程。",
+          assets: [
+            { type: "image", title: "封面预览", caption: "本科毕设的主视觉封面，保留了最初的整体版式印象。", src: "/assets/spatial/undergraduate-final/undergraduate-final-preview.png", alt: "本科毕设预览图" },
+            { type: "pdf", title: "完整 PDF", caption: "点击可直接查看原始 PDF，保留完整图纸与排版信息。", src: "/assets/spatial/undergraduate-final/undergraduate-final.pdf", label: "打开本科毕设 PDF" }
+          ]
+        },
+        "spatial-huaqing": {
+          kicker: "环境视觉与三维表达",
+          title: "西安华清科教产业园区环境景观更新设计",
+          summary: "以华清科教产业园区为对象，通过竞赛展板组织历史街巷、场地关系、景观更新与环境设计逻辑。",
+          assets: [
+            { type: "image", title: "展板一", caption: "从场地结构出发，梳理空间关系与设计策略。", src: "./assets/spatial/huaqing-ripple/huaqing-ripple-board-01.jpg", alt: "华清·涟漪上展板一" },
+            { type: "image", title: "展板二", caption: "补充总平面、分析图与表达细节，形成完整排版。", src: "./assets/spatial/huaqing-ripple/huaqing-ripple-board-02.jpg", alt: "华清·涟漪上展板二" }
+          ]
+        },
+        "spatial-blender": {
+          kicker: "环境视觉与三维表达",
+          title: "个人 Blender 建模",
+          summary: "个人三维建模练习，覆盖模型塑造、材质表现、灯光设置与画面输出，补充空间表达和视觉推演能力。",
+          assets: [
+            { type: "image", title: "预览图", caption: "展示个人 Blender 练习的整体画面感。", src: "./环境视觉与三维表达/个人Blender建模预览图.jpg", alt: "个人 Blender 建模预览图" },
+            { type: "image", title: "练习图一", caption: "练习基础模型与简单场景的组织。", src: "./环境视觉与三维表达/个人Blender建模/微信图片_20260618005408_18153_266.jpg", alt: "Blender 建模练习图一" },
+            { type: "image", title: "练习图二", caption: "关注材质和光影对画面气质的影响。", src: "./环境视觉与三维表达/个人Blender建模/微信图片_20260618005411_18154_266.jpg", alt: "Blender 建模练习图二" },
+            { type: "image", title: "练习图三", caption: "测试不同构图下的空间层次和观看节奏。", src: "./环境视觉与三维表达/个人Blender建模/微信图片_20260618005414_18155_266.png", alt: "Blender 建模练习图三" },
+            { type: "image", title: "练习图四", caption: "继续完善模型细节与环境氛围。", src: "./环境视觉与三维表达/个人Blender建模/微信图片_20260618005415_18156_266.jpg", alt: "Blender 建模练习图四" },
+            { type: "image", title: "练习图五", caption: "记录最终输出与画面收束效果。", src: "./环境视觉与三维表达/个人Blender建模/微信图片_20260618005417_18157_266.jpg", alt: "Blender 建模练习图五" }
+          ]
+        },
+        "campus-nus": {
+          kicker: "校园实践与成长经历",
+          title: "新加坡国立大学暑期交换生",
+          summary: "硕士阶段赴新加坡国立大学参加暑期课程，集中学习 Python 数据分析、Tableau 数据可视化、深度学习与自然语言处理，并完成数据分析结课作业。",
+          assets: [
+            { type: "image", title: "校园合影", caption: "在新加坡国立大学学习期间与同学留影。", src: "/assets/campus/nus/nus-01.jpg", alt: "新加坡国立大学暑期交换生照片一" },
+            { type: "image", title: "校园学习", caption: "记录在校园内学习和交流的片段。", src: "/assets/campus/nus/nus-02.jpg", alt: "新加坡国立大学暑期交换生照片二" },
+            { type: "image", title: "课堂展示", caption: "课程项目汇报时的现场照片。", src: "/assets/campus/nus/nus-03.jpg", alt: "新加坡国立大学暑期交换生照片三" },
+            { type: "image", title: "课程瞬间", caption: "暑期课程中的学习和记录。", src: "/assets/campus/nus/nus-04.jpg", alt: "新加坡国立大学暑期交换生照片四" },
+            { type: "pdf", title: "结课作业", caption: "点击可直接查看数据分析结课 PDF。", src: "/assets/campus/nus/data-analysis-final.pdf", label: "打开结课作业 PDF" }
+          ]
+        },
+        "campus-lion": {
+          kicker: "校园实践与成长经历",
+          title: "狮景会全国第六届代表大会志愿者",
+          summary: "硕士阶段参与狮景会全国代表大会志愿服务，负责签到、物料发放与现场协助，积累大型活动服务与组织协同经验。",
+          assets: [
+            { type: "image", title: "志愿者合影", caption: "穿着志愿者服装与志愿者牌的现场记录。", src: "/assets/campus/lion-landscape/lion-01.jpg", alt: "狮景会志愿者照片一" },
+            { type: "image", title: "现场协助", caption: "在活动现场进行组织配合与服务。", src: "/assets/campus/lion-landscape/lion-02.jpg", alt: "狮景会志愿者照片二" },
+            { type: "image", title: "活动记录", caption: "志愿服务过程中的现场瞬间。", src: "/assets/campus/lion-landscape/lion-03.jpg", alt: "狮景会志愿者照片三" }
+          ]
+        },
+        "campus-party": {
+          kicker: "校园实践与成长经历",
+          title: "西安建筑科技大学 2020 年艺术学院元旦晚会",
+          summary: "本科阶段作为表演者参与学院元旦晚会，在排练、舞台配合与正式演出中积累公共展示和团队协作经验。",
+          assets: [
+            { type: "image", title: "舞台合影", caption: "晚会现场的集体合影，记录整体氛围。", src: "/assets/campus/new-year-party/party-01.jpg", alt: "2020 年本科元旦晚会照片一" },
+            { type: "image", title: "演出瞬间", caption: "正式演出时的舞台片段。", src: "/assets/campus/new-year-party/party-02.jpg", alt: "2020 年本科元旦晚会照片二" }
+          ]
+        },
+        "campus-youku": {
+          kicker: "校园实践与成长经历",
+          title: "优酷“国漫很酷”校园主题活动",
+          summary: "本科阶段参与优酷在校园举办的国漫主题活动，作为表演者完成现场演出，体验青年文化活动的内容传播方式。",
+          assets: [
+            { type: "image", title: "活动现场", caption: "优酷国漫主题活动的现场记录。", src: "/assets/campus/youku-guoman/youku-01.jpg", alt: "优酷国漫活动照片一" },
+            { type: "image", title: "舞台互动", caption: "参与活动演出时的画面。", src: "/assets/campus/youku-guoman/youku-02.jpg", alt: "优酷国漫活动照片二" },
+            { type: "image", title: "团队合影", caption: "活动结束后的团队留影。", src: "/assets/campus/youku-guoman/youku-03.jpg", alt: "优酷国漫活动照片三" }
+          ]
+        },
+        "campus-best": {
+          kicker: "校园实践与成长经历",
+          title: "Best Education 英语口语俱乐部",
+          summary: "本科阶段参与英语口语俱乐部的演讲、小组竞赛和口语训练，并与团队获得最佳团队奖，提升英语表达与协作能力。",
+          assets: [
+            { type: "image", title: "活动合影", caption: "俱乐部活动中的集体照片。", src: "/assets/campus/best-education/best-01.jpg", alt: "Best Education 俱乐部照片一" },
+            { type: "image", title: "奖项记录", caption: "团队获得最佳团队奖的留念。", src: "/assets/campus/best-education/best-02.jpg", alt: "Best Education 俱乐部奖章" },
+            { type: "image", title: "演讲训练", caption: "参与口语训练和小组竞赛的现场。", src: "/assets/campus/best-education/best-03.jpg", alt: "Best Education 俱乐部照片三" },
+            { type: "image", title: "团队瞬间", caption: "持续练习与协作后的记录。", src: "/assets/campus/best-education/best-04.jpg", alt: "Best Education 俱乐部照片四" }
+          ]
+        },
+        "campus-ai-ta": {
+          kicker: "校园实践与成长经历",
+          title: "人工智能研究生课程助教",
+          summary: "基于对人工智能的兴趣，在华中农业大学担任一个学期的人工智能基础实践助教，帮助学生理解 AI、数据分析与 SQL 的基础技能。",
+          assets: [
+            { type: "image", title: "聘书与记录", caption: "课程助教聘书与相关记录，作为这一段实践的主要凭证。", src: "/assets/campus/ai-ta/ai-ta-certificate.jpg", alt: "人工智能研究生课程助教聘书" }
+          ]
+        }
+      };
+
+      const capabilityDetails = {
+        "capability-cet4": {
+          kicker: "PERSONAL ABILITY",
+          title: "英语四级与交流能力",
+          summary: "顺利通过英语四级，并结合新加坡交换学习经历，具备较自然的日常英语交流与基础学术沟通能力。",
+          index: "01",
+          lead: "语言基础与跨文化交流",
+          copy: "这部分主要呈现英语能力证明与交换经历的补充关系。语言能力不是单独的分数，而是我在真实学习环境里逐步建立起来的沟通工具。",
+          facts: [
+            { label: "能力说明", value: "通过四级并具备日常交流能力" },
+            { label: "补充背景", value: "有新加坡交换学习经历" },
+            { label: "展示文件", value: "PDF 证书原件" }
+          ],
+          actions: [
+            { label: "打开证书", href: "/assets/capability/cet4-certificate.pdf" }
+          ],
+          preview: {
+            kind: "pdf",
+            kicker: "certificate preview",
+            typeLabel: "pdf / embedded",
+            src: "/assets/capability/cet4-certificate.pdf",
+            label: "CET4 证书预览"
+          }
+        },
+        "capability-sanxiaxiang": {
+          kicker: "PERSONAL ABILITY",
+          title: "三下乡实践优秀个人",
+          summary: "在湖北省钟祥市胡集高中开展党史主题宣传教育实践活动，参与内容创作、视觉设计与现场组织协同。",
+          index: "02",
+          lead: "把主题教育做得更好理解",
+          copy: "围绕党史宣传，我参与了 PPT、短片、海报和传单等内容制作，并协助开展校园宣讲，让表达更容易被青少年接受。",
+          facts: [
+            { label: "活动方向", value: "党史宣传与校园教育实践" },
+            { label: "参与内容", value: "创作 / 设计 / 讲座协助" },
+            { label: "材料类型", value: "实拍图 + 证明文件" }
+          ],
+          actions: [
+            { label: "打开原文件", href: "/assets/capability/sanxiaxiang.doc" },
+            { label: "查看证明图片", href: "/assets/capability/sanxiaxiang.jpg" }
+          ],
+          preview: {
+            kind: "image",
+            kicker: "evidence preview",
+            typeLabel: "jpg / direct view",
+            src: "/assets/capability/sanxiaxiang.jpg",
+            alt: "三下乡实践优秀个人证明图片"
+          }
+        },
+        "capability-future-designer": {
+          kicker: "PERSONAL ABILITY",
+          title: "未来设计师全国高校数字艺术设计大赛",
+          summary: "以景观建模与影视表达完成西安大唐西市的复原展示，在模型搭建、画面组织与团队协作中积累了三维表达能力。",
+          index: "03",
+          lead: "景观建模与三维表达",
+          copy: "这个项目更强调从建筑空间到视频表达的整体控制。通过建模复原、画面节奏和细节处理，把历史场景转译成更完整的视觉成果。",
+          facts: [
+            { label: "项目内容", value: "大唐西市建模复原与 3D 展示" },
+            { label: "能力关键词", value: "建模 / 美学 / 协作" },
+            { label: "展示文件", value: "获奖证明图片" }
+          ],
+          actions: [
+            { label: "查看证明图片", href: "/assets/capability/future-designer.jpg" }
+          ],
+          preview: {
+            kind: "image",
+            kicker: "award preview",
+            typeLabel: "jpg / direct view",
+            src: "/assets/capability/future-designer.jpg",
+            alt: "未来设计师全国高校数字艺术设计大赛证明图片"
+          }
+        },
+        "capability-ai-ta": {
+          kicker: "PERSONAL ABILITY",
+          title: "人工智能研究生课程助教",
+          summary: "基于对人工智能的兴趣，在华中农业大学参与一个学期的人工智能基础实践助教，帮助同学理解 AI、数据分析和 SQL 入门技能。",
+          index: "04",
+          lead: "AI 知识普及与课堂协助",
+          copy: "我主要负责给同学讲解人工智能基础知识，并引导他们把 AI 用在学术场景中，同时辅助掌握数据分析与 SQL 的基础操作。",
+          facts: [
+            { label: "任教场景", value: "华中农业大学" },
+            { label: "主要内容", value: "AI 入门 / 学术赋能 / SQL 基础" },
+            { label: "展示文件", value: "课程助教证明图" }
+          ],
+          actions: [
+            { label: "查看证明图片", href: "/assets/capability/ai-ta.png" }
+          ],
+          preview: {
+            kind: "image",
+            kicker: "assistant preview",
+            typeLabel: "png / embedded",
+            src: "/assets/capability/ai-ta.png",
+            alt: "人工智能研究生课程助教证明"
+          }
+        },
+        "capability-innovation-contest": {
+          kicker: "PERSONAL ABILITY",
+          title: "中国国际大学生创新大赛",
+          summary: "与团队持续打磨“共享厨房”这一创意，从概念梳理、方案推进到路演呈现，完成了一次较完整的创新实践。",
+          index: "05",
+          lead: "把想法一步步做成方案",
+          copy: "这个项目里最重要的是和团队一起持续打磨创意，把共享厨房从一个灵感变成可以讲清楚、也能展示出来的参赛作品。",
+          facts: [
+            { label: "项目关键词", value: "共享厨房 / 社交想象 / 团队协作" },
+            { label: "过程特点", value: "从想法到路演的完整推进" },
+            { label: "展示文件", value: "参赛获奖图片" }
+          ],
+          actions: [
+            { label: "查看获奖图片", href: "/assets/capability/innovation-contest.jpg" }
+          ],
+          preview: {
+            kind: "image",
+            kicker: "contest preview",
+            typeLabel: "jpg / direct view",
+            src: "/assets/capability/innovation-contest.jpg",
+            alt: "中国国际大学生创新大赛获奖图片"
+          }
+        },
+        "capability-paper": {
+          kicker: "PERSONAL ABILITY",
+          title: "论文研究成果",
+          summary: "围绕社交媒体数据驱动的公园绿地 CES 感知研究，以自然语言处理和专业研究相结合的方式完成论文写作，并被知网收录。",
+          index: "06",
+          lead: "数据、语言与环境感知结合",
+          copy: "这篇论文是我把自然语言处理方法和专业研究结合起来的一个成果，围绕武汉市公园绿地的 CES 感知展开分析，并形成了可发表的学术文本。",
+          facts: [
+            { label: "论文题目", value: "社交媒体数据驱动的公园绿地 CES 感知研究" },
+            { label: "收录信息", value: "知网收录 / DOI 10.26914/c.cnkihy.2025.045646" },
+            { label: "展示文件", value: "论文原文件" }
+          ],
+          actions: [
+            { label: "打开原文件", href: "/assets/capability/paper.doc" },
+            { label: "查看 DOI", href: "https://doi.org/10.26914/c.cnkihy.2025.045646" }
+          ],
+          preview: {
+            kind: "panel",
+            kicker: "paper preview",
+            typeLabel: "doc / open file",
+            title: "社交媒体数据驱动的公园绿地 CES 感知研究-以武汉市为例",
+            text: "通过自然语言处理技术与景观研究方法相结合，分析社交媒体文本中的环境感知特征，并完成论文写作与收录。",
+            actions: [
+              { label: "打开论文原文件", href: "/assets/capability/paper.doc" },
+              { label: "查看 DOI", href: "https://doi.org/10.26914/c.cnkihy.2025.045646" }
+            ]
+          }
+        }
+      };
+
+      function projectAssetSrc(src) {
+        if (!src) return "";
+        const normalized = location.protocol === "file:"
+          ? (src.startsWith("/assets/") ? "./public" + src : src.startsWith("./assets/") ? "./public" + src.slice(1) : src.startsWith("/") ? "." + src : src)
+          : (src.startsWith("./public/") ? src.replace("./public", "") : src);
+        return new URL(normalized, location.href).href;
+      }
+
+      function renderProjectAssets(assets) {
+        return assets.map((asset) => {
+          const src = projectAssetSrc(asset.src);
+          const title = asset.title || asset.label || "";
+          const caption = asset.caption || "";
+          const media = asset.type === "pdf"
+            ? "<iframe src=\"" + src + "\" title=\"" + (asset.label || title || "PDF") + "\" loading=\"lazy\"></iframe>"
+            : "<img src=\"" + src + "\" alt=\"" + asset.alt + "\" loading=\"lazy\" decoding=\"async\" />";
+          return "<figure class=\"projectDetailFigure\">" +
+            "<div class=\"projectDetailFigureIntro\">" +
+              (title ? "<strong>" + title + "</strong>" : "") +
+              (caption ? "<p>" + caption + "</p>" : "") +
+            "</div>" +
+            "<div class=\"projectDetailFigureMedia\">" + media + "</div>" +
+            (asset.type === "pdf" && asset.label ? "<a class=\"projectDetailPdf\" href=\"" + src + "\" target=\"_blank\" rel=\"noreferrer\">" + asset.label + "</a>" : "") +
+          "</figure>";
+        }).join("");
+      }
+
+      function renderCapabilityActions(actions = []) {
+        return actions.map((action) => (
+          "<a href=\"" + projectAssetSrc(action.href) + "\" target=\"" + (action.href.startsWith("http") ? "_blank" : "_blank") + "\" rel=\"noreferrer\">" +
+            action.label +
+          "</a>"
+        )).join("");
+      }
+
+      function renderCapabilityFacts(facts = []) {
+        return facts.map((fact) => (
+          "<div class=\"capabilityFact\"><span>" + fact.label + "</span><strong>" + fact.value + "</strong></div>"
+        )).join("");
+      }
+
+      function renderCapabilityPreview(detail) {
+        const preview = detail.preview || {};
+        if (preview.kind === "pdf") {
+          return "<iframe src=\"" + projectAssetSrc(preview.src) + "\" title=\"" + preview.label + "\" loading=\"lazy\"></iframe>";
+        }
+        if (preview.kind === "panel") {
+          return "<div class=\"capabilityFilePanel\">" +
+            "<h3 class=\"capabilityFileTitle\">" + preview.title + "</h3>" +
+            "<p class=\"capabilityFileText\">" + preview.text + "</p>" +
+            "<div class=\"capabilityDocActions\">" + renderCapabilityActions(preview.actions || []) + "</div>" +
+          "</div>";
+        }
+        return "<img src=\"" + projectAssetSrc(preview.src) + "\" alt=\"" + (preview.alt || preview.label || detail.title) + "\" loading=\"lazy\" decoding=\"async\" />";
+      }
+
+      function openProjectDetail(id) {
+        const detail = projectDetails[id];
+        if (!detail || !projectDetailOverlay) return;
+        projectDetailKicker.textContent = detail.kicker;
+        projectDetailTitle.textContent = detail.title;
+        projectDetailSummary.textContent = detail.summary;
+        projectDetailAssets.innerHTML = renderProjectAssets(detail.assets || []);
+        projectDetailOverlay.setAttribute("aria-hidden", "false");
+        document.body.classList.add("is-project-detail-open");
+      }
+
+      function closeProjectDetail() {
+        if (!projectDetailOverlay) return;
+        projectDetailOverlay.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("is-project-detail-open");
+      }
+
+      function openCapabilityDetail(id) {
+        const detail = capabilityDetails[id];
+        if (!detail || !capabilityDetailOverlay) return;
+        capabilityDetailKicker.textContent = detail.kicker;
+        capabilityDetailTitle.textContent = detail.title;
+        capabilityDetailSummary.textContent = detail.summary;
+        capabilityDetailIndex.textContent = detail.index || "";
+        capabilityDetailLead.textContent = detail.lead || "";
+        capabilityDetailCopy.textContent = detail.copy || "";
+        capabilityDetailFacts.innerHTML = renderCapabilityFacts(detail.facts || []);
+        capabilityDetailActions.innerHTML = renderCapabilityActions(detail.actions || []);
+        capabilityDetailPreviewKicker.textContent = detail.preview?.kicker || "evidence preview";
+        capabilityDetailPreviewType.textContent = detail.preview?.typeLabel || "image / embedded";
+        capabilityDetailPreview.innerHTML = renderCapabilityPreview(detail);
+        capabilityDetailOverlay.setAttribute("aria-hidden", "false");
+        document.body.classList.add("is-capability-detail-open");
+      }
+
+      function closeCapabilityDetail() {
+        if (!capabilityDetailOverlay) return;
+        capabilityDetailOverlay.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("is-capability-detail-open");
+      }
+
+      const spatialStack = {
+        cardDistance: 30,
+        verticalDistance: 18,
+        delay: 5000,
+        pauseOnHover: false,
+        skewAmount: 0,
+        depthDistance: 0,
+        frontExitDistance: 84
+      };
+      const spatialEase = "cubic-bezier(0.22, 1, 0.36, 1)";
+      const spatialTransition = `transform 820ms ${spatialEase}, opacity 820ms ${spatialEase}, filter 820ms ${spatialEase}`;
+
+      function spatialTransform(index) {
+        const x = index * spatialStack.cardDistance;
+        const y = index * -spatialStack.verticalDistance;
+        const z = index * spatialStack.depthDistance;
+        return {
+          transform: `translate3d(calc(-50% + ${x}px), calc(-50% + ${y}px), ${z}px)`,
+          opacity: "1"
+        };
+      }
+
+      function placeSpatialCard(node, index, total, animate = true) {
+        node.style.zIndex = String(total - index);
+        node.style.transition = animate ? spatialTransition : "none";
+        node.style.transformOrigin = "center center";
+        const state = spatialTransform(index);
+        node.style.transform = state.transform;
+        node.style.opacity = state.opacity;
+        node.style.filter = index === 0 ? "saturate(1.03) brightness(1.03)" : `saturate(${Math.max(0.96, 1 - index * 0.02)}) brightness(${Math.max(0.98, 1 - index * 0.008)})`;
+      }
+
+      let spatialOrder = [...spatialCards];
+      let spatialSwapTimer = null;
+      let spatialAdvanceTimer = null;
+      const spatialSwapDelay = spatialStack.delay;
+
+      function renderSpatialOrder(nextOrder, animate = true) {
+        spatialOrder = nextOrder;
+        spatialOrder.forEach((node, index) => placeSpatialCard(node, index, spatialOrder.length, animate));
+        syncSpatialContent(spatialOrder[0]);
+      }
+
+      function advanceSpatialCard() {
+        if (spatialOrder.length < 2) return;
+        const [front, ...rest] = spatialOrder;
+        const nextOrder = [...rest, front];
+        clearTimeout(spatialAdvanceTimer);
+        front.style.transition = spatialTransition;
+        front.style.zIndex = String(spatialOrder.length + 2);
+        front.style.transform = `translate3d(calc(-50% + 0px), calc(-50% + ${spatialStack.frontExitDistance}px), 0px)`;
+        front.style.opacity = "1";
+        spatialAdvanceTimer = window.setTimeout(() => {
+          renderSpatialOrder(nextOrder, true);
+        }, 260);
+      }
+
+      function startSpatialSwap() {
+        stopSpatialSwap();
+        spatialSwapTimer = window.setInterval(advanceSpatialCard, spatialSwapDelay);
+      }
+
+      function stopSpatialSwap() {
+        if (spatialSwapTimer) {
+          clearInterval(spatialSwapTimer);
+          spatialSwapTimer = null;
+        }
+      }
+
+      spatialCards.forEach((card) => card.addEventListener("click", () => {
+        const index = spatialOrder.indexOf(card);
+        if (index <= 0) return;
+        clearTimeout(spatialAdvanceTimer);
+        renderSpatialOrder([card, ...spatialOrder.filter((node) => node !== card)], true);
+        startSpatialSwap();
+      }));
+      if (spatialDetailButton) {
+        spatialDetailButton.addEventListener("click", () => {
+          const activeCard = spatialOrder[0];
+          openProjectDetail(activeCard?.dataset.detailId || "");
+        });
+      }
+      campusCards.forEach((card) => {
+        const open = () => openProjectDetail(card.dataset.detailId || "");
+        card.addEventListener("click", open);
+        card.addEventListener("keydown", (event) => {
+          if (event.key !== "Enter" && event.key !== " ") return;
+          event.preventDefault();
+          open();
+        });
+      });
+      capabilityCards.forEach((card) => {
+        const open = () => openCapabilityDetail(card.dataset.detailId || "");
+        card.addEventListener("click", open);
+        card.addEventListener("keydown", (event) => {
+          if (event.key !== "Enter" && event.key !== " ") return;
+          event.preventDefault();
+          open();
+        });
+      });
+      projectDetailCloseButtons.forEach((button) => {
+        button.addEventListener("click", closeProjectDetail);
+      });
+      projectDetailOverlay?.addEventListener("click", (event) => {
+        if (event.target === projectDetailOverlay || event.target === projectDetailOverlay.querySelector(".projectDetailBackdrop")) {
+          closeProjectDetail();
+        }
+      });
+      capabilityDetailCloseButtons.forEach((button) => {
+        button.addEventListener("click", closeCapabilityDetail);
+      });
+      capabilityDetailOverlay?.addEventListener("click", (event) => {
+        if (event.target === capabilityDetailOverlay || event.target === capabilityDetailOverlay.querySelector(".capabilityDetailBackdrop")) {
+          closeCapabilityDetail();
+        }
+      });
+      renderSpatialOrder(spatialOrder, false);
+      requestAnimationFrame(() => startSpatialSwap());
+
+      const skillData = [
+        { name: "Photoshop（PS）", proficiency: 90, summary: "精通商业级图像精修、人像后期、调色校色与素材合成，可独立完成海报、视觉物料、平面版式等专业设计产出；熟练掌握图层蒙版、通道、滤镜库等全量核心功能，具备成熟的审美体系与落地执行能力。", icon: "photoshop.png" },
+        { name: "Premiere Pro（Pr）", proficiency: 90, summary: "精通专业视频全流程剪辑，可独立完成宣传片、短片、栏目内容等剪辑制作；熟练掌握多轨道音视频同步、关键帧动画、调色转场、字幕包装等功能，具备优秀的叙事节奏把控与画面审美能力。", icon: "premiere-pro.png" },
+        { name: "After Effects（Ae）", proficiency: 40, summary: "掌握基础动效制作、简单字幕动画与图层关键帧操作，可完成基础片头包装、简单特效合成，能够借助现有模板完成常规动态视觉效果的修改与调整。", icon: "after-effects.png" },
+        { name: "剪映", proficiency: 70, summary: "熟练掌握全流程剪辑功能，可高效完成短视频、vlog 的剪辑、字幕、转场与特效包装；能够运用模板与智能工具快速批量产出内容，曾有一段时期高频使用其完成内容制作。", icon: "jianying.png" },
+        { name: "Blender", proficiency: 40, summary: "掌握基础多边形建模操作，可完成简单三维模型搭建、基础材质赋予与灯光布置，能够借助现有素材完成简单场景的渲染输出，对三维创作全流程有基础认知与动手能力。", icon: "blender.png" },
+        { name: "AutoCAD", proficiency: 60, summary: "熟练掌握二维工程制图与基础三维建模，可独立完成平面施工图、方案草图的绘制与修改；能够规范使用图层、标注、块等核心工具，具备基础的工程制图规范意识。", icon: "autocad.png" },
+        { name: "SketchUp", proficiency: 60, summary: "本科阶段高频使用的三维建模工具，可独立完成建筑、景观方案的快速建模与效果表现；熟练掌握组件、材质、场景等核心工具，曾使用其完成多项竞赛作品的模型搭建与方案输出。", icon: "sketchup.png" },
+        { name: "Python", proficiency: 45, summary: "具备基础的代码读写与调试能力，常借助 AI 辅助完成数据分析脚本、自动化处理工具的编写；多用于数据清洗、简单统计与轻量化 Vibe Coding 场景，能够理解基础代码逻辑并完成修改调整。", icon: "python.png" },
+        { name: "PyCharm", proficiency: 45, summary: "常用作数据分析与 AI 辅助编码的集成开发环境，可完成 Python 脚本的运行、调试与环境配置；能够配合 AI 工具高效完成 Vibe Coding 与数据处理任务，对 Python 开发流程有基础掌握。", icon: "pycharm.png" },
+        { name: "Excel", proficiency: 80, summary: "熟练掌握高阶数据处理与分析功能，可灵活运用函数公式、数据透视表、条件格式与动态图表完成数据统计、报表制作与批量处理；能够高效完成复杂数据的整理、分析与可视化产出。", icon: "excel.png" },
+        { name: "Tableau", proficiency: 40, summary: "掌握基础的数据可视化操作，可连接多类数据源完成简单图表、交互式仪表盘的搭建；能够进行基础的数据筛选、维度切换与可视化调整，对商业智能分析工具有入门级应用能力。", icon: "tableau.png" },
+        { name: "Claude Code", proficiency: 60, summary: "具备 AI 辅助编码与本地工具联动能力，可借助其完成代码调试、简单项目搭建与文件批量处理；曾集中使用其完成开发提效任务，能够通过自然语言指令完成基础工程化操作。", icon: "claude-code.png" },
+        { name: "Codex", proficiency: 80, summary: "高频使用的 AI 开发与研究辅助工具，深度应用于学术论文辅助研究、代码生成调试与轻量化 Vibe Coding 场景；可通过其完成数据分析脚本编写、多工具联动操作，熟练掌握任务拆解与指令调度，大幅提升研究与开发效率。", icon: "codex.png" },
+        { name: "ComfyUI", proficiency: 30, summary: "了解节点式 AI 绘画的工作流逻辑，可使用现成工作流完成文生图、图生图任务；能够调整基础生成参数、替换模型与输入素材，对节点式 AI 创作工具有入门级操作能力。", icon: "comfyui.png" },
+        { name: "Stable Diffusion", proficiency: 30, summary: "掌握 AI 绘画的基础生成逻辑，可通过文生图、图生图完成基础创意素材创作；能够独立编写提示词、调整采样参数与切换基础模型，对开源 AI 绘画工具有入门级应用能力。", icon: "stable-diffusion.png" },
+        { name: "Nano Banana", proficiency: 80, summary: "2025 年度最高频使用的 AI 生图工具，熟练掌握提示词编写、风格控制与参数调试；可稳定产出符合需求的插画、概念图与视觉素材，对模型风格与生成效果有精准的把控能力。", icon: "nano-banana.png" },
+        { name: "NotebookLM", proficiency: 60, summary: "曾集中用于学术研究辅助，可上传多份文献资料完成智能梳理、要点总结与精准引文溯源；能够借助其完成文献综述搭建、知识点问答与音频概览学习，有效提升文献研读效率。", icon: "notebooklm.png" },
+        { name: "即梦 AI", proficiency: 80, summary: "高频使用的 AI 视频生成工具，熟练掌握分镜设计、首尾帧控制与文 / 图生视频全流程操作；可精准把控画面风格与运镜效果，高效完成分镜预演、创意短片与视频素材的生成产出。", icon: "jimeng-ai.png" },
+        { name: "可灵 AI", proficiency: 80, summary: "熟练使用的 AI 视频创作工具，精通智能分镜、主体参考与多镜头叙事设置；可根据剧本完成电影感分镜视频的生成，能够精准控制景别、运镜与画面一致性，高效完成创意预演与视频物料产出。", icon: "keling-ai.png" },
+        { name: "Vision", proficiency: 30, summary: "入门级应用于论文写作辅助，可完成学术图表解读、文献图片信息提取与视觉素材分析；能够借助视觉模型辅助学术资料的整理与信息提取，满足基础的论文研究需求。", icon: "vision.png" },
+        { name: "PowerPoint（PPT）", proficiency: 90, summary: "精通商业演示文稿的设计与制作，具备成熟的版式设计、信息可视化与审美能力；曾为多家企业完成定制化 PPT 设计产出，熟练掌握母版编辑、动画转场、数据图表美化等全量功能，能够兼顾信息传递效率与高级视觉质感。", icon: "powerpoint.png" },
+        { name: "Word", proficiency: 90, summary: "日常最高频使用的文档处理工具，精通长文档排版、样式管理、自动目录生成、批注修订与格式规范；可独立完成学术论文、项目报告、方案文案等专业文档的全流程排版与产出，熟练掌握各类高效排版技巧。", icon: "word.png" }
+      ];
+
+      let activeSkill = 0;
+
+      function iconPaths(file) {
+        const normalized = String(file || "").trim().replace(/\\/g, "/");
+        const primary = location.protocol === "file:"
+          ? "./public/assets/skills/" + normalized
+          : "/assets/skills/" + normalized;
+        const fallback = location.protocol === "file:"
+          ? "/assets/skills/" + normalized
+          : "./assets/skills/" + normalized;
+        return { primary, fallback };
+      }
+
+      function createSkillImage(file, alt) {
+        const paths = iconPaths(file);
+        const img = document.createElement("img");
+        img.src = paths.primary;
+        img.alt = alt;
+        img.loading = "lazy";
+        img.decoding = "async";
+        img.addEventListener("error", () => {
+          if (img.dataset.fallbackApplied) return;
+          img.dataset.fallbackApplied = "1";
+          img.src = paths.fallback;
+        });
+        return img;
+      }
+
+      function skillIconHTML(file, alt) {
+        const wrapper = document.createElement("span");
+        wrapper.appendChild(createSkillImage(file, alt));
+        return wrapper.innerHTML;
+      }
+
+      function syncSkillSelection(index) {
+        [...skillsSphere.querySelectorAll("[data-skill-index]")].forEach((button) => {
+          const isActive = Number(button.dataset.skillIndex || 0) === index;
+          button.setAttribute("aria-pressed", String(isActive));
+          button.classList.toggle("is-active", isActive);
+        });
+      }
+
+      function buildGrid() {
+        skillsSphere.innerHTML = skillData.map((skill, index) => (
+          "<button class=\"skillGridItem\" type=\"button\" data-skill-index=\"" + index + "\" aria-pressed=\"false\" aria-label=\"" + skill.name + "\">" +
+            "<span class=\"skillGridIcon\">" + skillIconHTML(skill.icon, "") + "</span>" +
+            "<span class=\"skillGridName\">" + skill.name + "</span>" +
+          "</button>"
+        )).join("");
+      }
+
+      function renderModal(index) {
+        const skill = skillData[index];
+        if (!skill) return;
+        skillsModal.innerHTML = "<div class=\"skillsDetailShell\"><div class=\"skillsDetailIcon\"></div><div class=\"skillsDetailCopy\"><span class=\"skillsDetailKicker\">软件名称</span><h3>" + skill.name + "</h3><div class=\"skillsDetailMeter\"><span style=\"width:" + skill.proficiency + "%\"></span></div><strong>熟练度 " + skill.proficiency + "%</strong><p>" + skill.summary + "</p></div></div>";
+        const iconSlot = skillsModal.querySelector(".skillsDetailIcon");
+        if (iconSlot) iconSlot.appendChild(createSkillImage(skill.icon, skill.name));
+        syncSkillSelection(index);
+      }
+
+      function openSkill(index) {
+        activeSkill = index;
+        renderModal(index);
+        skillsRoot.dataset.open = "true";
+        skillsViewer.setAttribute("aria-hidden", "false");
+      }
+
+      function closeSkillsOverlay() {
+        skillsRoot.dataset.open = "false";
+        skillsViewer.setAttribute("aria-hidden", "true");
+        syncSkillSelection(-1);
+      }
+
+      buildGrid();
+      syncSkillSelection(-1);
+
+      skillsSphere.addEventListener("click", (event) => {
+        const button = event.target.closest("[data-skill-index]");
+        if (!button) return;
+        const index = Number(button.dataset.skillIndex || 0);
+        openSkill(index);
+      });
+
+      skillCloseButtons.forEach((button) => {
+        button.addEventListener("click", closeSkillsOverlay);
+      });
+
+      skillsViewer.addEventListener("click", (event) => {
+        if (event.target === skillsViewer) closeSkillsOverlay();
+      });
+
+      window.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && skillsViewer.getAttribute("aria-hidden") === "false") {
+          closeSkillsOverlay();
+        }
+        if (event.key === "Escape" && projectDetailOverlay?.getAttribute("aria-hidden") === "false") {
+          closeProjectDetail();
+        }
+        if (event.key === "Escape" && capabilityDetailOverlay?.getAttribute("aria-hidden") === "false") {
+          closeCapabilityDetail();
+        }
+      });
+
+
+
+      function initSiteLoader() {
+        const loader = document.getElementById('site-loader');
+        const bar = document.getElementById('site-loader-bar');
+        const percent = document.getElementById('site-loader-percent');
+        if (!loader || !bar || !percent) {
+          startHeroVideoAfterLoader();
+          return;
+        }
+
+        let value = 0;
+        let done = false;
+        const startedAt = performance.now();
+        const setProgress = (next) => {
+          value = Math.max(value, Math.min(next, 100));
+          bar.style.width = value.toFixed(0) + '%';
+          percent.textContent = value.toFixed(0) + '%';
+        };
+        const finish = () => {
+          if (done) return;
+          done = true;
+          window.clearInterval(timer);
+          window.clearTimeout(fallbackTimer);
+          setProgress(100);
+          window.setTimeout(() => {
+            loader.classList.add('is-done');
+            document.body.classList.remove('is-loading');
+          }, 60);
+          window.setTimeout(startHeroVideoAfterLoader, 220);
+          window.setTimeout(() => loader.remove(), 520);
+        };
+        const finishAfterMinimum = () => {
+          const wait = Math.max(0, 220 - (performance.now() - startedAt));
+          window.setTimeout(finish, wait);
+        };
+
+        const timer = window.setInterval(() => {
+          const step = value < 52 ? 22 : value < 86 ? 12 : 4;
+          setProgress(Math.min(value + step, 96));
+        }, 28);
+        const fallbackTimer = window.setTimeout(finish, 900);
+
+        setProgress(12);
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', finishAfterMinimum, { once: true });
+        } else {
+          window.setTimeout(finishAfterMinimum, 40);
+        }
+      }
+
+      function initCardNavigation() {
+        const navContainer = document.querySelector('.cardNavContainer');
+        const nav = document.getElementById('card-nav');
+        const toggle = document.getElementById('card-nav-toggle');
+        if (!nav || !toggle) return;
+        const revealNav = () => navContainer?.classList.add('is-ready');
+        const introVideo = document.querySelector('.heroVideoIntro');
+        let revealTimer = window.setTimeout(revealNav, 3700);
+        if (introVideo) {
+          introVideo.addEventListener('timeupdate', () => {
+            if (introVideo.currentTime < 3.7) return;
+            window.clearTimeout(revealTimer);
+            revealNav();
+          }, { once: false });
+        }
+        const close = () => {
+          nav.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded', 'false');
+          toggle.setAttribute('aria-label', '打开页面导航');
+        };
+        const open = () => {
+          nav.classList.add('is-open');
+          toggle.setAttribute('aria-expanded', 'true');
+          toggle.setAttribute('aria-label', '关闭页面导航');
+        };
+        toggle.addEventListener('click', () => {
+          if (nav.classList.contains('is-open')) close();
+          else open();
+        });
+        nav.querySelectorAll('a[href^="#"]').forEach((link) => {
+          link.addEventListener('click', close);
+        });
+        window.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape') close();
+        });
+      }
+
+      function initCapabilityBorderGlow() {
+        const cards = [...document.querySelectorAll('.capabilityCard')];
+        if (!cards.length) return;
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const reset = (card) => {
+          card.style.setProperty('--edge-proximity', '0');
+          card.style.setProperty('--cursor-angle', '45deg');
+        };
+        const update = (card, clientX, clientY) => {
+          const rect = card.getBoundingClientRect();
+          const x = clientX - rect.left;
+          const y = clientY - rect.top;
+          const cx = rect.width / 2;
+          const cy = rect.height / 2;
+          const dx = x - cx;
+          const dy = y - cy;
+          const kx = dx === 0 ? Infinity : cx / Math.abs(dx);
+          const ky = dy === 0 ? Infinity : cy / Math.abs(dy);
+          const edge = Math.min(Math.max(1 / Math.min(kx, ky), 0), 1) * 100;
+          let angle = Math.atan2(dy, dx) * 180 / Math.PI + 90;
+          if (angle < 0) angle += 360;
+          card.style.setProperty('--edge-proximity', edge.toFixed(3));
+          card.style.setProperty('--cursor-angle', angle.toFixed(3) + 'deg');
+        };
+        cards.forEach((card) => {
+          if (reduceMotion) return;
+          card.addEventListener('pointermove', (event) => update(card, event.clientX, event.clientY));
+          card.addEventListener('pointerleave', () => reset(card));
+          card.addEventListener('blur', () => reset(card));
+          card.addEventListener('focus', () => {
+            card.style.setProperty('--edge-proximity', '100');
+            card.style.setProperty('--cursor-angle', '115deg');
+          });
+        });
+      }
+
+
+      function initSplitTextReveal() {
+        const elements = [...document.querySelectorAll('[data-split-text]')];
+        if (!elements.length) return;
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const reveal = (el) => el.classList.add('is-visible');
+        const observer = reduceMotion || !('IntersectionObserver' in window)
+          ? null
+          : new IntersectionObserver((entries) => {
+              entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                reveal(entry.target);
+                observer.unobserve(entry.target);
+              });
+            }, { threshold: 0.18, rootMargin: '-80px 0px' });
+
+        elements.forEach((el) => {
+          const text = el.textContent.trim();
+          if (!text || el.dataset.splitReady === 'true') return;
+          el.dataset.splitReady = 'true';
+          el.setAttribute('aria-label', text);
+          el.textContent = '';
+          const fragment = document.createDocumentFragment();
+          [...text].forEach((char, index) => {
+            const span = document.createElement('span');
+            span.className = 'split-char';
+            span.setAttribute('aria-hidden', 'true');
+            span.style.setProperty('--char-index', index);
+            span.textContent = char === ' ' ? '\u00a0' : char;
+            fragment.appendChild(span);
+          });
+          el.appendChild(fragment);
+          el.classList.add('is-split');
+          if (observer) observer.observe(el);
+          else reveal(el);
+        });
+      }
+
+      function initTiltedPortrait() {
+        const card = document.querySelector('[data-tilted-card]');
+        if (!card || window.matchMedia('(max-width: 640px)').matches) return;
+        const reset = () => {
+          card.classList.remove('is-tilting');
+          card.style.setProperty('--tilt-x', '0deg');
+          card.style.setProperty('--tilt-y', '0deg');
+        };
+        card.addEventListener('pointermove', (event) => {
+          const rect = card.getBoundingClientRect();
+          const offsetX = event.clientX - rect.left - rect.width / 2;
+          const offsetY = event.clientY - rect.top - rect.height / 2;
+          const rotateX = (offsetY / (rect.height / 2)) * -10;
+          const rotateY = (offsetX / (rect.width / 2)) * 10;
+          card.classList.add('is-tilting');
+          card.style.setProperty('--tilt-x', rotateX.toFixed(2) + 'deg');
+          card.style.setProperty('--tilt-y', rotateY.toFixed(2) + 'deg');
+        });
+        card.addEventListener('pointerleave', reset);
+        card.addEventListener('blur', reset);
+      }
+
+      initSiteLoader();
+      initCardNavigation();
+      initSplitTextReveal();
+      initTiltedPortrait();
+      initCapabilityBorderGlow();
+
+      filmCards.forEach((card) => {
+        const video = card.querySelector("video");
+        const start = async () => {
+          if (!video) return;
+          video.controls = true;
+          video.muted = false;
+          try {
+            await video.play();
+          } catch {
+            video.muted = true;
+            await video.play().catch(() => undefined);
+          }
+        };
+        card.addEventListener("click", start);
+      });
+    </script>
+  </body>
+</html>

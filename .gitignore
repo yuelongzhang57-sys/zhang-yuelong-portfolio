@@ -1,0 +1,35 @@
+node_modules/
+dist/
+.vercel/
+
+backups/
+tmp/
+resume-extracted/
+.codex-video-analysis/
+stitch_3d_cartoon_portfolio_redesign/
+tools/
+
+*.log
+*.pid
+# Local raw files and deploy-only exclusions.
+aigc作品集/
+三维创作与排版/
+个人能力与技能学习/
+校园经历/
+环境视觉与三维表达/
+*.psd
+*.zip
+*.docx
+index - 副本.html
+photo-contact-sheet.jpg
+复试ppt.pdf
+开场动画（最新）.mp4
+循环动画（最新）.mp4
+开场视频1最新.mp4
+循环视频1最新.mp4
+public/assets/videos/aigc/lamborghini-aigc.mp4
+public/assets/videos/aigc-commercial-film.mp4
+public/assets/videos/hero/
+public/assets/videos/new-media-video.mp4
+public/assets/projects/cards/
+public/assets/videos/aigc/originals-before-vercel-compress/
