@@ -6856,8 +6856,8 @@ body.is-project-detail-open {
 /* Homepage hero text adjustment: keep the existing motion, refine only the first-screen text placement. */
 .heroTitleArt,
 .hero.isTitleReady .heroTitleArt {
-  left: 50%;
-  top: clamp(2px, 0.15vw, 6px);
+  left: calc(50% - 7vw);
+  top: clamp(-18px, -1vw, -8px);
   width: min(56vw, 940px);
 }
 
@@ -6867,12 +6867,12 @@ body.is-project-detail-open {
 
 .heroProfile,
 .hero.isTitleReady .heroProfile {
-  right: clamp(18px, 1.4vw, 28px);
-  width: min(28vw, 470px);
+  right: clamp(8px, 0.8vw, 16px);
+  width: min(25.5vw, 430px);
 }
 
 .heroProfile::before {
-  inset: -8px -12px -10px;
+  inset: -8px -8px -10px;
   border-radius: clamp(14px, 1.25vw, 20px);
 }
 
