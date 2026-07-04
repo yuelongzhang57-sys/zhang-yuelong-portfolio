@@ -33,3 +33,6 @@ public/assets/videos/hero/
 public/assets/videos/new-media-video.mp4
 public/assets/projects/cards/
 public/assets/videos/aigc/originals-before-vercel-compress/
+
+.vercel
+.env*
