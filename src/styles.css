@@ -6857,7 +6857,7 @@ body.is-project-detail-open {
 .heroTitleArt,
 .hero.isTitleReady .heroTitleArt {
   left: calc(50% - 7vw);
-  top: clamp(-18px, -1vw, -8px);
+  top: clamp(-124px, -6.6vw, -84px);
   width: min(56vw, 940px);
 }
 
@@ -6869,6 +6869,8 @@ body.is-project-detail-open {
 .hero.isTitleReady .heroProfile {
   right: clamp(8px, 0.8vw, 16px);
   width: min(25.5vw, 430px);
+  box-sizing: border-box;
+  padding-left: clamp(12px, 0.75vw, 16px);
 }
 
 .heroProfile::before {
