@@ -79,6 +79,7 @@ npm.cmd exec --yes vercel -- --prod --yes
 
 - 开场视频：`public/assets/hero/hero-intro.mp4`
 - 循环视频：`public/assets/hero/hero-loop.mp4`
+- 手机端/视频失败兜底封面：`public/assets/hero/hero-poster.jpg`
 - 首页视频标签：`index.html` 中 `.heroVideoIntro` 和 `.heroVideoLoop`
 - 首页播放逻辑：`index.html` 中 `initHeroVideo()`
 
@@ -138,7 +139,7 @@ npm.cmd exec --yes vercel -- --prod --yes
 当前移动端策略：
 
 - 首页在手机端按 16:9 横幅高度显示视频，不再用整屏高度制造大面积空白。
-- 首页视频在手机端使用 `object-fit: contain`，配合 `height: calc(100vw * 9 / 16)` 保持完整画面。
+- 首页视频在手机端使用 `object-fit: contain`，配合 `height: calc(100vw * 9 / 16)` 保持完整画面；同时有 `.heroPosterFallback` 图片兜底，避免微信/手机浏览器视频不自动播放时白屏。
 - 个人介绍在手机端保留“左图右文”布局，照片在左侧，标题和介绍文字在右侧。
 - 教育背景、基本信息、实习经历继续放在个人介绍下方展示；640px 以下经历列表会压缩为证据卡并限制长段落行数，避免个人介绍板块过长。
 
